@@ -1,0 +1,24 @@
+{
+  "dev": {
+    "AWS_ACCOUNT_ID": "837984857695",
+    "AWS_PROFILE_NAME": "faisal",
+    "AWS_PROFILE_REGION": "us-east-1"
+  },
+  "prod": {
+    "AWS_ACCOUNT_ID": "837984857695",
+    "AWS_PROFILE_NAME": "faisal",
+    "AWS_PROFILE_REGION": "us-east-1"
+  },
+  "availability-zones:account=837984857695:region=us-west-1": [
+    "us-west-1a",
+    "us-west-1c"
+  ],
+  "availability-zones:account=837984857695:region=us-east-1": [
+    "us-east-1a",
+    "us-east-1b",
+    "us-east-1c",
+    "us-east-1d",
+    "us-east-1e",
+    "us-east-1f"
+  ]
+}
