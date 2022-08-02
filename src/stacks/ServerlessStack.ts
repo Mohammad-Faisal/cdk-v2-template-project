@@ -10,10 +10,6 @@ import {
 import { Construct } from "constructs";
 import { SecureRestApi } from "../constructs/SecureRestApi";
 import { CommonLambdaFunction } from "../constructs/CommonLambdaFunction";
-import {
-  HttpLambdaAuthorizer,
-  HttpLambdaResponseType,
-} from "@aws-cdk/aws-apigatewayv2-authorizers";
 
 export interface ServerlessStackProps extends StackProps {
   readonly stageName: string;
