@@ -147,3 +147,26 @@ npm install esbuild
 ```
 
 because it's the default thing. It will resolve your error on the pipeline
+
+### CDK Topics
+
+- Sns stack
+- SQS Stack
+- Lambda triggered by sns
+- Lambda pushing to sns
+- Lambda triggered by sqs
+- Lambda pushing to sqs
+- SNS pushing to sqs
+- Lambda responding to Api gateway
+- Lambda responding to s3 upload
+- How to share resources between stacks
+- How to share resources between regions
+- How to setup VPC
+- How to setup VPC peering
+- Hpw to create pipeline for lambda
+- How to add security authorizer for lambda
+- How to create RDS with cdk
+- How to upload values to SSM parameter
+- How to use multiple environments
+- How to load environment variables dynamically
+- How to create a layer and use it across multiple lambda
