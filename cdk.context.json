@@ -1,11 +1,11 @@
 {
   "dev": {
-    "AWS_ACCOUNT_ID": "837984857695",
+    "AWS_ACCOUNT_ID": "83798485769",
     "AWS_PROFILE_NAME": "faisal",
     "AWS_PROFILE_REGION": "us-east-1"
   },
   "prod": {
-    "AWS_ACCOUNT_ID": "837984857695",
+    "AWS_ACCOUNT_ID": "83798485769",
     "AWS_PROFILE_NAME": "faisal",
     "AWS_PROFILE_REGION": "us-east-1"
   },

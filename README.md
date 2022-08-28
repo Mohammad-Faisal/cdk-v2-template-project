@@ -150,8 +150,6 @@ because it's the default thing. It will resolve your error on the pipeline
 
 ### CDK Topics
 
-- Sns stack
-- SQS Stack
 - Lambda triggered by sns
 - Lambda pushing to sns
 - Lambda triggered by sqs
