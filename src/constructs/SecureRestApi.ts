@@ -1,4 +1,3 @@
-// import { LambdaRestApi } from "@aws-cdk/aws-apigateway";
 import {
   StackProps,
   aws_lambda as lambda,
@@ -36,10 +35,34 @@ export class SecureRestApi extends Construct {
     lambdaFn: lambda.IFunction,
     authorizer: TokenAuthorizer
   ): void {
-    const integration = new apigateway.LambdaIntegration(lambdaFn);
-    const path = this.restAPI.root.addResource(route);
-    path.addMethod(httpMethod, integration, {
-      authorizer, // <--- if authorizer is not specified then the api will be public access
+    const nonProxyIntegration = new apigateway.LambdaIntegration(lambdaFn, {
+      proxy: false,
+      passthroughBehavior: apigateway.PassthroughBehavior.WHEN_NO_MATCH,
+      requestTemplates: { "application/json": '{ "statusCode": 200 }' },
+      integrationResponses: [
+        {
+          statusCode: "200",
+        },
+      ],
+    });
+
+    const proxyIntegration = new apigateway.LambdaIntegration(lambdaFn);
+
+    const resource = this.restAPI.root.addResource(route);
+    resource.addMethod(httpMethod, proxyIntegration, {
+      authorizer,
+      // this apigateway.AuthorizationType.IAM is required for authorizer to produce REQUEST type payload
+      // else it will be TOKEN type
+      authorizationType: authorizer
+        ? apigateway.AuthorizationType.IAM
+        : undefined,
+      methodResponses: proxyIntegration
+        ? []
+        : [
+            {
+              statusCode: "200",
+            },
+          ],
     });
   }
 }
